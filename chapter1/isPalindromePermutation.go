@@ -1,16 +1,12 @@
 package chapter1
 
-import (
-	"unicode"
-)
-
 func isPalindromePermutation(s string) bool {
 
 	charMap := make(map[rune]int)
 
 	for _, char := range s {
 
-		if !unicode.IsSpace(char) {
+		if char != ' ' {
 			charMap[char]++
 		}
 	}

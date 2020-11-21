@@ -9,7 +9,7 @@ func Urlify(s []rune) string {
 	//Get a count of all spaces, that way we know how big to turn s into
 	var stringCount int
 	for _, runeVal := range s {
-		if unicode.IsSpace(runeVal) {
+		if runeVal == ' ' {
 			stringCount++
 		}
 	}
