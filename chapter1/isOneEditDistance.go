@@ -1,9 +1,5 @@
 package chapter1
 
-import (
-	"fmt"
-)
-
 // abcde abcd
 func IsOneEditDistance(check string, compare string) bool {
 
@@ -41,9 +37,6 @@ func IsOneEditDistance(check string, compare string) bool {
 		downIndex++
 	}
 
-	fmt.Println(inPlaceMissCount)
-	fmt.Println(upMissCount)
-	fmt.Println(downMissCount)
 	if inPlaceMissCount > 1 && upMissCount > 1 && downMissCount > 1 {
 		return false
 	}
