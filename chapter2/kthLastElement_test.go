@@ -5,9 +5,10 @@ import (
 	"testing"
 )
 
-func Test_removeDuplicates(t *testing.T) {
+func Test_kthLastElement(t *testing.T) {
 	type args struct {
 		ll *nodeSingly
+		k  int
 	}
 	tests := []struct {
 		name string
@@ -36,29 +37,22 @@ func Test_removeDuplicates(t *testing.T) {
 						},
 					},
 				},
+				k: 2,
 			},
 			want: &nodeSingly{
-				val: "a",
+				val: "d",
 				next: &nodeSingly{
-					val: "b",
-					next: &nodeSingly{
-						val:  "d",
-						next: nil,
-					},
+					val:  "a",
+					next: nil,
 				},
 			},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := removeDuplicates(tt.args.ll); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("removeDuplicates() = %v, want %v", got, tt.want)
+			if got := kthLastElement(tt.args.ll, tt.args.k); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("kthLastElement() = %v, want %v", got, tt.want)
 			}
-			/**
-			if got := removeDuplicatesNoSpace(tt.args.ll); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("removeDuplicatesNoSpace() = %v, want %v", got, tt.want)
-			}
-			**/
 		})
 	}
 }
