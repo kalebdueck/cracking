@@ -7,7 +7,7 @@ package chapter4
 func RouteBetweenNodes(root *Node, search *Node) bool {
 	//We'll use an array as a queue 
 	// cause I'm too lazy to write a Queue class again
-	queue := []*Node
+	queue := make([]*Node, 0)
 
 	queue = append(queue, root)
 
