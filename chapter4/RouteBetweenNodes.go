@@ -5,7 +5,7 @@ package chapter4
 //We'll use a Breadth-first search initially (Can use a bidirectional search if asked)
 //Then just exit out if we find the node we're looking for.
 func RouteBetweenNodes(root *Node, search *Node) bool {
-	//We'll use an array as a queue 
+	//We'll use an array as a queue
 	// cause I'm too lazy to write a Queue class again
 	queue := make([]*Node, 0)
 
@@ -27,7 +27,7 @@ func RouteBetweenNodes(root *Node, search *Node) bool {
 
 		node.Visited = true
 
-		queue = append(queue, node.Children)
+		queue = append(queue, node.Children...)
 
 	}
 
